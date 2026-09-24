@@ -38,3 +38,66 @@ D_raw  = duration × 343.0 / 2 / 10000
 D_comp = duration × v     / 2 / 10000
 Δ = D_raw − D_comp
 E = Δ / D_comp × 100%
+```
+
+## Прошивка
+
+Файл: `code/temperature_compensation.ino`
+
+Библиотеки:
+- OneWire (Paul Stoffregen)
+- DallasTemperature (Miles Burton)
+
+## Данные
+
+Папка `data/`:
+
+| Файл | Расстояние | Среднее Δ (см) | Среднее E (%) |
+|------|-----------|----------------|---------------|
+| `Блок_10см.md` | 10 см | -0.106 | -1.10% |
+| `Блок_30см.md` | 30 см | -0.329 | -1.09% |
+| `Блок_50см.md` | 50 см | -0.536 | -1.07% |
+
+Формат данных: `N | T (°C) | v (м/с) | D_raw (см) | D_comp (см) | Δ (см) | E (%)`
+
+## Графики
+
+Папка `graphs/` — заполняется визуализатором:
+
+| Файл | Что показывает |
+|------|----------------|
+| `delta_vs_distance.png` | Зависимость Δ от расстояния |
+| `raw_vs_comp.png` | D_raw и D_comp по сериям |
+| `delta_series.png` | Δ по сериям |
+| `histogram_delta.png` | Гистограмма распределения Δ |
+
+## Фото
+
+Папка `photos/`:
+
+| Файл | Что на нём |
+|------|-----------|
+| `scheme_1.jpg` | Общий план макета |
+| `scheme_2.jpg` | Крупный план DS18B20 с резистором |
+
+## Файлы
+
+```text
+lab1/
+├── README.md
+├── Отчёт.docx
+├── data/
+│   ├── Блок_10см.md
+│   ├── Блок_30см.md
+│   └── Блок_50см.md
+├── code/
+│   └── temperature_compensation.ino
+├── graphs/
+│   ├── delta_vs_distance.png
+│   ├── raw_vs_comp.png
+│   ├── delta_series.png
+│   └── histogram_delta.png
+└── photos/
+    ├── scheme_1.jpg
+    └── scheme_2.jpg
+```
