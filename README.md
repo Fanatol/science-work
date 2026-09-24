@@ -19,7 +19,8 @@
 
 ## Структура
 
-science-works/
+```text
+science-work/
 ├── README.md
 ├── lab1/
 │   ├── README.md
@@ -40,3 +41,4 @@ science-works/
 │       └── scheme_2.jpg
 └── lab2/
     └── ...
+```
